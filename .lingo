@@ -1,0 +1,11 @@
+tenets:
+  - bots:
+      codelingo/clair:
+        doc: Example tenet that finds all functions.
+        comments: This is a function, but you probably already knew that.
+        name: find-funcs
+    query: |
+      import codelingo/ast/python36/0.0.0
+
+      @ clair.comment
+      python36.function_def({depth: any})
